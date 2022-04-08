@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },
+  {
+    path: ':id',
+    loadChildren: () => import('./note/note.module').then( m => m.NotePageModule)
   }
 ];
 

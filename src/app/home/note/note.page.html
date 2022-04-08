@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{note.title}}</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button (click)="onUpdate(inputText.value)">
+        <ion-icon slot="icon-only" name="checkmark-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-list-header> {{note.title}} </ion-list-header>
+
+          <ion-item class="descryption" lines="none">
+            <ion-textarea #inputText [value]="note.note" autoGrow="true">
+            </ion-textarea>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

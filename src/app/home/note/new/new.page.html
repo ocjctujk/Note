@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>New Note</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button [disabled]="!f.valid" (click)="onCreate()">
+        <ion-icon slot="icon-only" name="checkmark-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item lines="none">
+              <ion-textarea
+                #title
+                rows="1"
+                class="textarea"
+                autoGrow="true"
+                placeholder="Title here"
+                required
+                name="title"
+                ngModel
+              ></ion-textarea>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-textarea
+                #noteText
+                autoGrow="true"
+                placeholder="notes here"
+                name="note"
+                ngModel
+                
+              ></ion-textarea>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
